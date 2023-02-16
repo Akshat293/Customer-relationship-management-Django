@@ -13,13 +13,13 @@
           <div class="row">
 
             <!-- Company Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4" id='Company'>
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Companies</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">4,083</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{company}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-home fa-2x text-gray-300"></i>
@@ -30,13 +30,13 @@
             </div>
 
             <!-- Contact Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4" id='Contact'>
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Contacts</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18,002</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{contacts}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -50,5 +50,30 @@
         
         
     </div>
+
+
+    <script>
+      const ele=document.getElementById('Company');
+      ele.addEventListener('click',()=>{
+       // open the register url
+       register_url="{% url 'register' %}";
+       window.open(register_url,'_blank');
+       
+      })
+
+      const ele1=document.getElementById('Contact');
+      ele1.addEventListener('click',()=>{
+       // open new tab
+       register_url="{% url 'register' %}";
+        window.open(register_url,'_blank');
+      })
+    </script>
+    
     <!-- /.container-fluid -->
 {% endblock content %}
+
+
+
+
+
+

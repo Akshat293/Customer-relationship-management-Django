@@ -46,4 +46,7 @@
     e.preventDefault();
   });
 
+  // On click for the Company card AND 
+ 
+
 })(jQuery); // End of use strict

@@ -65,6 +65,8 @@ urlpatterns = [
          name='password_reset_complete'),
 
     path('oauth/', include('social_django.urls', namespace='social')),  # <-- here
+
+    path('api/', include('api.urls')),
 ]
 
 

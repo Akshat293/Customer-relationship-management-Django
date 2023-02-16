@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from apps.userprofile.models import Profile
+import random
 
 class HomeView(TemplateView):
     template_name = 'common/home.html'
@@ -20,7 +21,9 @@ class DashboardView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         print(self.request.user.id)
-        context['book_list'] = self.request.user
+        # Generate a random number between 1 and 1000
+        context['company'] = random.randint(1, 1000) 
+        context['contacts'] = random.randint(1, 1000)
         return context
 
 class SignUpView(CreateView):
